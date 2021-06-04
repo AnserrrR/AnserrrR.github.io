@@ -307,7 +307,39 @@ img {
 }
 
 @media (max-width: 970px) {
-    
+    .main-menu {
+        flex-wrap: wrap;
+    }
+
+    .bi-list {
+        display: block;
+        width: 1.5rem;
+        height: 1.5rem;
+        cursor: pointer;
+    }
+
+    .menu-list {
+        --menu-li-height: 1rem;
+        --menu-li-gap: .5rem;
+        --menu-elems-num: 3;
+        width: 100%;
+        height: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--menu-li-gap);
+        padding: 0;
+        overflow: hidden;
+        transition: height .7s;
+    }
+
+    .menu-list.show {
+        margin-top: 5px;
+        height: calc((var(--menu-li-height) + var(--menu-li-gap)) * var(--menu-elems-num));
+    }
+
+    .menu-list li {
+        height: var(--menu-li-height);
+    }
 
     .promo {
         height: auto;
